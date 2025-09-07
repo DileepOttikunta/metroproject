@@ -1,0 +1,16 @@
+<div class="reg-container">
+  <h2>Register</h2>
+  <label for="name">Name</label>
+  <input id="name" type="text" [(ngModel)]="name" placeholder="Enter your name">
+
+  <label for="email">Email id</label>
+  <input id="email" type="text" [(ngModel)]="email" placeholder="Enter your Email id">
+
+  <label for="mobno">Mobile Number</label>
+  <input id="mobno" type="number" [(ngModel)]="mobno" placeholder="Enter your Mobile number">
+
+  <label for="password">Password</label>
+  <input id="password" type="password" [(ngModel)]="password" placeholder="Enter your password">
+
+  <button (click)="save()">Register</button>
+</div>

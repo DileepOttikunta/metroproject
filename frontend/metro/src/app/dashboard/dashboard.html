@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <header class="dashboard-header">
+    <div class="logo">
+      <p>Chennai Metro | <span>{{username}}</span></p>
+    </div>
+    <div class="header-buttons">
+      <p class="balance">{{ammount}} | </p>
+      <button class="btn load-btn">Load Amount</button>
+      <button class="btn logout-btn">Log Out</button>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="card profile-card">
+      <h3>Profile</h3>
+      <p>Name: {{username}}</p>
+      <p>Email: {{useremail}}</p>
+    </div>
+
+    <div class="card journey-card">
+      <h3>Journey History</h3>
+      <!-- <ul>
+        <li *ngFor="let journey of journeys">{{journey}}</li>
+      </ul> -->
+    </div>
+
+    <div class="card booking-card">
+      <h3>Book Ticket</h3>
+      <button class="btn book-btn">New Ticket</button>
+    </div>
+  </main>
+</div>
