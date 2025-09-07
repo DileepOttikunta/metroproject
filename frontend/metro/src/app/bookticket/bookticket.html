@@ -1,0 +1,49 @@
+<div style="position: relative;left: 90%;top: 10px;">
+    <button (click)="back()" style="padding: 10px;font-weight: 400;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; width:7%; color: white;background-color: orangered;border: none;border-radius: 4px;">Back</button>
+</div>
+<div class="ticket-container">
+  <!-- Left: Booking Form -->
+  <div class="ticket-form glass-card">
+    <h2>🎫 Book Ticket</h2>
+
+    <div class="form-group">
+      <label>From</label>
+      <select [(ngModel)]="fromPlace">
+        <option value="" disabled selected>Select place</option>
+        <option *ngFor="let p of places" [value]="p.refid">
+          {{ p.places }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>To</label>
+      <select [(ngModel)]="toPlace">
+        <option value="" disabled selected>Select place</option>
+        <option *ngFor="let p of places" [value]="p.refid" [disabled]="p.refid === fromPlace">
+          {{ p.places }}
+        </option>
+      </select>
+    </div>
+
+    <button class="primary-btn" (click)="bookTicket()">Book Ticket</button>
+  </div>
+
+  <!-- Right: Ticket Card -->
+  <div class="ticket-card glass-card" *ngIf="ticketResponse" id="ticketCard">
+    <h3>🎟️ Your Ticket</h3>
+    <div class="ticket-content">
+      <img [src]="ticketResponse.qrUrl" alt="QR Code">
+      <div class="ticket-info">
+        <p>
+          <strong>Status:</strong>
+          <span class="status-dot" [ngClass]="isExpired ? 'expired' : 'active'"></span>
+          {{ isExpired ? 'Expired' : 'Valid' }}
+        </p>
+        <div class="download-btn-wrapper" *ngIf="ticketResponse">
+          <button class="secondary-btn" (click)="downloadTicket()">⬇ Download Ticket</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

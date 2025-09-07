@@ -35,4 +35,8 @@ export class Dashboard implements OnInit {
       }
     );
   }
+bookt() {
+  this.route.navigate(['/bookticket']);
+}
+
 }
